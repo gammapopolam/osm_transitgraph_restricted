@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore', category=pd.errors.SettingWithCopyWarning)
 from typing import List, Dict, Any, Optional, Union, Tuple
 # --- Рефакторинг класса TransitGraph ---
 
-with open('url.md', 'r') as f:
+with open('osm_transitgraph_restricted/url.md', 'r') as f:
     # Предполагается, что в файле url.md содержится URL для загрузки данных
     MB_URL = f.read().strip()
 
@@ -457,7 +457,7 @@ class EnhTransitGraph:
         edges_gdf.set_geometry('geometry', crs='EPSG:4326', inplace=True)
         return edges_gdf
 import json
-with open ('colors.json', 'r') as f:
+with open ('osm_transitgraph_restricted/colors.json', 'r') as f:
     # Предполагается, что в файле colors.json содержится словарь с цветами для трамвайных маршрутов
     DEFAULT_TRAM_COLORS = json.load(f)
 
